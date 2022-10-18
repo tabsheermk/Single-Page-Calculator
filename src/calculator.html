@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>                
+    <head>
+        <title>Calculator</title>
+        <style>
+            body{
+                margin: 0;
+                padding: 0;
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background: #A8FEBC;
+                font-family: 'Lucida Sans',Geneva, Verdana, sans-serif;
+            }
+
+            h1{
+                font-size: 40px;
+                color: #484948;
+            }
+
+            #IOfield{
+                width: 220px;
+                height: 60px;
+                margin-bottom: 5px;
+                border-radius: 20%;
+                font-size: larger;
+                font-weight: 600;
+                border: none;
+                padding: 2px;
+            }
+
+            .btn, .operator, .zero{
+                width: 50px;
+                height: 50px;
+                margin: 2px;
+                border-radius: 50%;
+                background-color: #AA88F9;
+                border: none;
+                font-size: large;
+                cursor: pointer;
+                font-weight: 600;
+            }
+
+            .zero{
+                width: 100px;
+                margin: 6px;
+                font-weight: 600;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Calculator</h1>
+        <form name = "form1" action = "calculator.html" method = "POST">
+            <!--Text Field for displaying input and output-->
+            <input type = "text" name = "field" id ="IOfield">
+            <br />
+            <!--button to clear the IOfield-->
+            <input type = "button" class ="btn" value = "C" onclick = "form1.field.value =''">
+            <!--button for backspacing-->
+            <input type = "button" class ="btn" value = "<" onclick = "form1.field.value = form1.field.value.substring(0,form1.field.value.length*1-1)">
+            <input type = "button" class ="btn" value = "00" onclick = "form1.field.value +='00'">
+            <input type = "button" class ="operator" value = "/" onclick = "form1.field.value +='/'">
+            <br /> <!--break tag to go to next line-->
+            <input type =  "button" class ="btn" value = "7" onclick = "form1.field.value +='7'">
+            <input type = "button" class ="btn" value = "8" onclick = "form1.field.value +='8'">
+            <input type = "button" class ="btn" value = "9" onclick = "form1.field.value +='9'">
+            <input type = "button" class ="operator" value = "*" onclick = "form1.field.value +='*'">
+            <br />
+            <input type = "button" class ="btn" value = "4" onclick = "form1.field.value +='4'">
+            <input type = "button" class ="btn" value = "5" onclick = "form1.field.value +='5'">
+            <input type = "button" class ="btn" value = "6" onclick = "form1.field.value +='6'">
+            <input type = "button" class ="operator" value = "-" onclick = "form1.field.value +='-'">
+            <br />
+            <input type = "button" class ="btn" value = "1" onclick = "form1.field.value +='1'">
+            <input type = "button" class ="btn" value = "2" onclick = "form1.field.value +='2'">
+            <input type = "button" class ="btn" value = "3" onclick = "form1.field.value +='3'">
+            <input type = "button" class ="operator" value = "+" onclick = "form1.field.value +='+'">
+            <br />
+            <input type = "button" class = "zero" value = "0" onclick = "form1.field.value +='0'">
+            <input type = "button" class ="btn" value = "." onclick = "form1.field.value +='.'">
+            <input type = "button" class ="operator" value = "=" onclick = "form1.field.value= eval(form1.field.value)">
+        </form>
+    </body> 
+</html>
